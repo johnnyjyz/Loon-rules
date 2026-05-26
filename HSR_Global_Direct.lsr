@@ -1,0 +1,29 @@
+# Honkai: Star Rail Global / US - direct gameplay, patch, announcement, log domains
+DOMAIN-SUFFIX,starrails.com
+DOMAIN-SUFFIX,hoyolab.com
+DOMAIN-SUFFIX,hoyo.link
+
+# HSR / HoYoverse exact hosts observed in capture. Do not include sdk.hoyoverse.com here; it is reserved for payment/proxy.
+DOMAIN,minor-api-os.hoyoverse.com
+DOMAIN,hkrpg-log-upload-os.hoyoverse.com
+DOMAIN,log-upload-os.hoyoverse.com
+DOMAIN,sg-hkrpg-announcement-api.hoyoverse.com
+DOMAIN,sg-hkrpg-announcement-api-static.hoyoverse.com
+DOMAIN,sdk-log-upload-os.hoyoverse.com
+DOMAIN,hkrpg-sdk-os-static.hoyoverse.com
+DOMAIN,ad-log-upload-os.hoyoverse.com
+DOMAIN,hkrpg-sdk-os.hoyoverse.com
+DOMAIN,hkrpg-sdk-os-us.hoyoverse.com
+DOMAIN,webstatic.hoyoverse.com
+DOMAIN,sdk-os-static.hoyoverse.com
+DOMAIN,apm-log-upload-os.hoyoverse.com
+DOMAIN,sg-public-data-api.hoyoverse.com
+DOMAIN,abtest-api-data-sg.hoyoverse.com
+DOMAIN,sdk-common-static.hoyoverse.com
+DOMAIN,sdk-common-api.hoyoverse.com
+DOMAIN,act.hoyoverse.com
+DOMAIN,act-webstatic.hoyoverse.com
+DOMAIN,hsr.hoyoverse.com
+DOMAIN,cs.hoyoverse.com
+DOMAIN,account.hoyoverse.com
+DOMAIN,public-operation-hkrpg.hoyoverse.com

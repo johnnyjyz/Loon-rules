@@ -1,0 +1,5 @@
+# Honkai: Star Rail payment center / HoYoverse SDK payment
+# Robust choice: route the whole sdk.hoyoverse.com host through proxy.
+# The payment URL is https://sdk.hoyoverse.com/payment/hsr/index.html#/m
+# The #/m fragment is client-side and cannot be matched on the network request.
+DOMAIN,sdk.hoyoverse.com
