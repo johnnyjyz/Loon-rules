@@ -1,0 +1,6 @@
+# iCloud heavy upload/download only - DIRECT
+# Conservative version: does NOT include gateway.icloud.com or general icloud.com.
+# Use with Remote Rule: policy=DIRECT or policy=iCloud上传策略
+DOMAIN-SUFFIX,content-storage-upload.googleapis.com
+DOMAIN-SUFFIX,content-storage-download.googleapis.com
+DOMAIN-SUFFIX,icloud-content.com

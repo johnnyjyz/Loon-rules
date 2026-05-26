@@ -1,0 +1,4 @@
+# US Credit Card Guide / 美卡指南 + 美卡论坛
+# Use with Remote Rule: policy=美卡论坛策略
+DOMAIN-SUFFIX,uscreditcardguide.com
+DOMAIN-SUFFIX,uscardforum.com
