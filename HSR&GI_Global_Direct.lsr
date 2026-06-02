@@ -1,9 +1,12 @@
-# Honkai: Star Rail Global / US - direct gameplay, patch, announcement, log domains
-DOMAIN-SUFFIX,starrails.com
-DOMAIN-SUFFIX,hoyolab.com
-DOMAIN-SUFFIX,hoyo.link
+# HoYoverse Games Direct - HSR + Genshin Impact
+# Minimum-impact version:
+# - Direct gameplay, patch, game SDK/static/log hosts.
+# - Do NOT include hoyolab.com, hoyo.link, sdk.hoyoverse.com, payment/topup/passport hosts.
 
-# HSR / HoYoverse exact hosts observed in capture. Do not include sdk.hoyoverse.com here; it is reserved for payment/proxy.
+# Honkai: Star Rail - patch / dispatch / gameplay
+DOMAIN-SUFFIX,starrails.com
+
+# Honkai: Star Rail - exact HoYoverse hosts observed / game-related
 DOMAIN,minor-api-os.hoyoverse.com
 DOMAIN,hkrpg-log-upload-os.hoyoverse.com
 DOMAIN,log-upload-os.hoyoverse.com
@@ -21,9 +24,16 @@ DOMAIN,sg-public-data-api.hoyoverse.com
 DOMAIN,abtest-api-data-sg.hoyoverse.com
 DOMAIN,sdk-common-static.hoyoverse.com
 DOMAIN,sdk-common-api.hoyoverse.com
-DOMAIN,act.hoyoverse.com
-DOMAIN,act-webstatic.hoyoverse.com
-DOMAIN,hsr.hoyoverse.com
-DOMAIN,cs.hoyoverse.com
-DOMAIN,account.hoyoverse.com
 DOMAIN,public-operation-hkrpg.hoyoverse.com
+
+# Genshin Impact - patch / dispatch
+DOMAIN-SUFFIX,yuanshen.com
+
+# Genshin Impact - exact HoYoverse hosts
+DOMAIN,hk4e-api-os.hoyoverse.com
+DOMAIN,hk4e-api-os-static.hoyoverse.com
+DOMAIN,hk4e-sdk-os.hoyoverse.com
+DOMAIN,hk4e-sdk-os-static.hoyoverse.com
+DOMAIN,webstatic-sea.hoyoverse.com
+DOMAIN,uploadstatic-sea.hoyoverse.com
+DOMAIN,api-account-os.hoyoverse.com
