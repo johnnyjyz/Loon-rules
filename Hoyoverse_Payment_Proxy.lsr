@@ -1,0 +1,17 @@
+# HoYoverse payment / top-up / account web flow
+# Policy in Loon should be Final or your proxy policy group.
+# Keep this Remote Rule ABOVE the HoYoverse game direct rule.
+
+# Official HoYoverse payment host:
+# HSR: https://sdk.hoyoverse.com/payment/hsr/...
+# GI:  https://sdk.hoyoverse.com/payment/genshin/...
+DOMAIN,sdk.hoyoverse.com
+
+# HSR top-up backend observed in capture
+DOMAIN,hkrpg-topup-os.hoyoverse.com
+
+# HoYoverse account/passport host observed in top-up flow
+DOMAIN,passport-api-us.hoyoverse.com
+
+# HoYoverse CDN observed during payment / web flow
+DOMAIN,fastcdn.hoyoverse.com
