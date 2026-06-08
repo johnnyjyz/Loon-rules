@@ -3,12 +3,6 @@
 # Use with Remote Rule: policy=DIRECT, tag=银行直连
 # Keep these domains out of MITM / Rewrite / Script / Reject.
 
-#CN
-#ABC
-DOMAIN,msmp.abchina.com.cn,REJECT
-
-
-#US
 # Chase / JPMorgan
 DOMAIN-SUFFIX,chase.com
 DOMAIN-SUFFIX,chasecdn.com
