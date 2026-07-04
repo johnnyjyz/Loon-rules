@@ -1,17 +1,15 @@
 # HoYoverse Games Direct - HSR + Genshin Impact
-# Minimum-impact but tougher version.
-#
-# Direct gameplay, patch, SDK, announcement, dispatch, and gateway traffic.
+# Purpose: direct game login, patch, SDK, dispatch, and game gateway traffic.
 # Do NOT include hoyolab.com or hoyo.link here.
 # Do NOT include broad DOMAIN-SUFFIX,hoyoverse.com.
 
-# Honkai: Star Rail - patch / dispatch / gameplay
+# HSR patch / dispatch / gateway domains
 DOMAIN-SUFFIX,starrails.com
 
-# Honkai: Star Rail - sdk.hoyoverse.com is needed for normal in-game announcement/web resources
+# HSR normal in-game SDK / announcement resources
 DOMAIN,sdk.hoyoverse.com
 
-# Honkai: Star Rail - exact HoYoverse hosts observed / game-related
+# HSR exact HoYoverse game-related hosts
 DOMAIN,minor-api-os.hoyoverse.com
 DOMAIN,hkrpg-log-upload-os.hoyoverse.com
 DOMAIN,log-upload-os.hoyoverse.com
@@ -30,20 +28,25 @@ DOMAIN,abtest-api-data-sg.hoyoverse.com
 DOMAIN,sdk-common-static.hoyoverse.com
 DOMAIN,sdk-common-api.hoyoverse.com
 DOMAIN,public-operation-hkrpg.hoyoverse.com
+DOMAIN,account.hoyoverse.com
+DOMAIN,cs.hoyoverse.com
+DOMAIN,act.hoyoverse.com
+DOMAIN,act-webstatic.hoyoverse.com
 
 # HSR gateway IPs observed from query_gateway
-# Start with exact IPs. If gateway changes often, use the /24 version below.
+IP-CIDR,47.252.29.176/32,no-resolve
 IP-CIDR,47.89.187.37/32,no-resolve
 IP-CIDR,47.253.55.255/32,no-resolve
 
-# Optional stronger version if /32 still fails because gateway changes:
+# Optional, only enable if /32 keeps changing:
+# IP-CIDR,47.252.29.0/24,no-resolve
 # IP-CIDR,47.89.187.0/24,no-resolve
 # IP-CIDR,47.253.55.0/24,no-resolve
 
 # Genshin Impact - patch / dispatch
 DOMAIN-SUFFIX,yuanshen.com
 
-# Genshin Impact - exact HoYoverse hosts
+# Genshin Impact exact HoYoverse hosts
 DOMAIN,hk4e-api-os.hoyoverse.com
 DOMAIN,hk4e-api-os-static.hoyoverse.com
 DOMAIN,hk4e-sdk-os.hoyoverse.com
