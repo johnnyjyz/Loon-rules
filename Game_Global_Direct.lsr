@@ -1,10 +1,15 @@
 # HoYoverse Games Direct - HSR + Genshin Impact
-# Minimum-impact version:
-# - Direct gameplay, patch, game SDK/static/log hosts.
-# - Do NOT include hoyolab.com, hoyo.link, sdk.hoyoverse.com, payment/topup/passport hosts.
+# Minimum-impact but tougher version.
+#
+# Direct gameplay, patch, SDK, announcement, dispatch, and gateway traffic.
+# Do NOT include hoyolab.com or hoyo.link here.
+# Do NOT include broad DOMAIN-SUFFIX,hoyoverse.com.
 
 # Honkai: Star Rail - patch / dispatch / gameplay
 DOMAIN-SUFFIX,starrails.com
+
+# Honkai: Star Rail - sdk.hoyoverse.com is needed for normal in-game announcement/web resources
+DOMAIN,sdk.hoyoverse.com
 
 # Honkai: Star Rail - exact HoYoverse hosts observed / game-related
 DOMAIN,minor-api-os.hoyoverse.com
@@ -25,6 +30,15 @@ DOMAIN,abtest-api-data-sg.hoyoverse.com
 DOMAIN,sdk-common-static.hoyoverse.com
 DOMAIN,sdk-common-api.hoyoverse.com
 DOMAIN,public-operation-hkrpg.hoyoverse.com
+
+# HSR gateway IPs observed from query_gateway
+# Start with exact IPs. If gateway changes often, use the /24 version below.
+IP-CIDR,47.89.187.37/32,no-resolve
+IP-CIDR,47.253.55.255/32,no-resolve
+
+# Optional stronger version if /32 still fails because gateway changes:
+# IP-CIDR,47.89.187.0/24,no-resolve
+# IP-CIDR,47.253.55.0/24,no-resolve
 
 # Genshin Impact - patch / dispatch
 DOMAIN-SUFFIX,yuanshen.com
