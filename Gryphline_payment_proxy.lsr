@@ -1,7 +1,11 @@
 # ===================================================
-# Title: Arknights: Endfield - Top-Up Center
-# Target App: Loon
+# Title: Arknights: Endfield - Store & Auth
+# Description: Handles top-up, product catalog, and account login.
 # ===================================================
 
-# > Top-Up Center Domain
+# > Explicit Web Top-Up Center
 DOMAIN,topup.gryphline.com
+
+# > In-Game Store, Product Lists & Currency APIs
+DOMAIN,u8.gryphline.com
+DOMAIN,as.gryphline.com
