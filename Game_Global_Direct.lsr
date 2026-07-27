@@ -56,30 +56,28 @@ DOMAIN,uploadstatic-sea.hoyoverse.com
 DOMAIN,api-account-os.hoyoverse.com
 
 # ===================================================
-# Title: Arknights: Endfield - Core Game Traffic
-# Target App: Loon
+# Title: Arknights: Endfield - Core Gameplay & Data
+# Description: Handles game servers, CDNs, telemetry, and webviews.
 # ===================================================
 
 # > Game Servers & Gateway Nodes
 DOMAIN,beyond-asiapacific.gryphline.com
 DOMAIN,beyond-euandus.gryphline.com
 
-# > Account, OAuth, and In-Game Shop APIs
-DOMAIN,u8.gryphline.com
-DOMAIN,as.gryphline.com
-
-# > Launcher & Webviews
+# > Game Launcher
 DOMAIN,launcher.gryphline.com
+
+# > Game Bulletins & Webviews
 DOMAIN,ef-webview.gryphline.com
 DOMAIN,game-hub.gryphline.com
+
+# > Hypergryph CDN (Game Assets, Patches, Static Images)
+DOMAIN-SUFFIX,hg-cdn.com
 
 # > Telemetry & Logging Services
 DOMAIN,event-log-api-data-platform-data-lake-prod.gryphline.com
 DOMAIN,eventlog.gryphline.com
 DOMAIN,core-api-survey-prod.gryphline.com
-
-# > Hypergryph CDN (Game Assets & Patches)
-DOMAIN-SUFFIX,hg-cdn.com
 
 # > Security & Anti-Cheat
 DOMAIN,dl.listdl.com
@@ -87,7 +85,6 @@ DOMAIN,dl.listdl.com
 # > Analytics & Crash Reporting
 DOMAIN,ios.crashsight.wetest.net
 
-# > Application User-Agent
-USER-AGENT,Endfield*
-
+# > Application User-Agent Fallback
+#USER-AGENT,Endfield*
 
