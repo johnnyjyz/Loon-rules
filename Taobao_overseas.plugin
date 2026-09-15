@@ -1,0 +1,33 @@
+#!name = Taobao App Overseas Test
+#!desc = Diagnostic/conservative Taobao app overseas-block test. Forces Taobao item-detail traffic onto MITM-visible host routing where possible, normalizes thw=us to thw=cn on item APIs, and patches only explicit overseas restriction signals in detail JSON.
+#!author = ChatGPT
+#!system = iOS,iPadOS
+#!loon_version = 3.5.1(983)
+#!tag = Taobao,Diagnostic
+#!type = normal
+
+# IMPORTANT:
+# 1) Replace SCRIPT_URL below with the raw GitHub URL of taobao_app_overseas.js.
+# 2) Disable any existing rule/plugin that REJECTs http://*/amdc/mobileDispatch while testing.
+# 3) Keep MITM enabled and the Loon CA trusted.
+
+[Argument]
+normalize_region = switch,true,tag=地区 Cookie 测试,desc=仅在淘宝商品相关 API 请求中将 thw=us 改为 thw=cn
+patch_detail = switch,true,tag=商品响应修补,desc=只修补明确的海外禁限售字段/跳转，不强行解锁普通库存或购买限制
+notify = switch,true,tag=调试通知,desc=命中 AMDC 或商品详情 API 时发送 Loon 通知
+debug = switch,true,tag=详细日志,desc=在 Loon 日志中输出命中和修改信息
+
+[Script]
+
+# Replace the URL below after uploading taobao_app_overseas.js to GitHub.
+request if ${normalize_region} == true && ${url} ~= /^https:\/\/(?:acs|trade-acs|h5api)\.m\.taobao\.com\//i then script("SCRIPT_URL", {${normalize_region}, ${patch_detail}, ${notify}, ${debug}}) with tag="Taobao region-cookie test", timeout=20
+
+# AMDC is HTTP. Let the request complete; the script clears only
+# trade-acs.m.taobao.com's returned direct-IP list.
+response if ${url} ~= /^http:\/\/(?:amdc\.m\.taobao\.com|\d{1,3}(?:\.\d{1,3}){3})\/amdc\/mobileDispatch/i then script("SCRIPT_URL", {${normalize_region}, ${patch_detail}, ${notify}, ${debug}}) with tag="Taobao AMDC route test", timeout=20, requires_body=true
+
+# Catch both the long-standing native detail API and likely newer detail-family variants.
+response if ${url} ~= /^https:\/\/(?:trade-acs|acs|h5api)\.m\.taobao\.com\/(?:gw|h5)\/(?:mtop\.taobao\.detail\.[^\/?]+|mtop\.taobao\.pcdetail\.data\.get)/i then script("SCRIPT_URL", {${normalize_region}, ${patch_detail}, ${notify}, ${debug}}) with tag="Taobao detail overseas test", timeout=20, requires_body=true
+
+[Mitm]
+hostname = acs.m.taobao.com, trade-acs.m.taobao.com, h5api.m.taobao.com
