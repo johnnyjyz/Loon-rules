@@ -20,14 +20,14 @@ debug = switch,true,tag=详细日志,desc=在 Loon 日志中输出命中和修�
 [Script]
 
 # Replace the URL below after uploading taobao_app_overseas.js to GitHub.
-request if ${normalize_region} == true && ${url} ~= /^https:\/\/(?:acs|trade-acs|h5api)\.m\.taobao\.com\//i then script("SCRIPT_URL", {${normalize_region}, ${patch_detail}, ${notify}, ${debug}}) with tag="Taobao region-cookie test", timeout=20
+request if ${normalize_region} == true && ${url} ~= /^https:\/\/(?:acs|trade-acs|h5api)\.m\.taobao\.com\//i then script("https://raw.githubusercontent.com/johnnyjyz/Loon-rules/main/taobao_app_overseas.js", {${normalize_region}, ${patch_detail}, ${notify}, ${debug}}) with tag="Taobao region-cookie test", timeout=20
 
 # AMDC is HTTP. Let the request complete; the script clears only
 # trade-acs.m.taobao.com's returned direct-IP list.
-response if ${url} ~= /^http:\/\/(?:amdc\.m\.taobao\.com|\d{1,3}(?:\.\d{1,3}){3})\/amdc\/mobileDispatch/i then script("SCRIPT_URL", {${normalize_region}, ${patch_detail}, ${notify}, ${debug}}) with tag="Taobao AMDC route test", timeout=20, requires_body=true
+response if ${url} ~= /^http:\/\/(?:amdc\.m\.taobao\.com|\d{1,3}(?:\.\d{1,3}){3})\/amdc\/mobileDispatch/i then script("https://raw.githubusercontent.com/johnnyjyz/Loon-rules/main/taobao_app_overseas.js", {${normalize_region}, ${patch_detail}, ${notify}, ${debug}}) with tag="Taobao AMDC route test", timeout=20, requires_body=true
 
 # Catch both the long-standing native detail API and likely newer detail-family variants.
-response if ${url} ~= /^https:\/\/(?:trade-acs|acs|h5api)\.m\.taobao\.com\/(?:gw|h5)\/(?:mtop\.taobao\.detail\.[^\/?]+|mtop\.taobao\.pcdetail\.data\.get)/i then script("SCRIPT_URL", {${normalize_region}, ${patch_detail}, ${notify}, ${debug}}) with tag="Taobao detail overseas test", timeout=20, requires_body=true
+response if ${url} ~= /^https:\/\/(?:trade-acs|acs|h5api)\.m\.taobao\.com\/(?:gw|h5)\/(?:mtop\.taobao\.detail\.[^\/?]+|mtop\.taobao\.pcdetail\.data\.get)/i then script("https://raw.githubusercontent.com/johnnyjyz/Loon-rules/main/taobao_app_overseas.js", {${normalize_region}, ${patch_detail}, ${notify}, ${debug}}) with tag="Taobao detail overseas test", timeout=20, requires_body=true
 
 [Mitm]
 hostname = acs.m.taobao.com, trade-acs.m.taobao.com, h5api.m.taobao.com
