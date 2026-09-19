@@ -12,6 +12,9 @@ patch_detail = switch,true,tag=商品响应修补,desc=只修补明确的海外�
 notify = switch,true,tag=调试通知,desc=命中相关请求时发送 Loon 通知
 debug = switch,true,tag=详细日志,desc=输出调试信息到 Loon 日志
 
+[Rule]
+URL-REGEX,^http:\/\/(?:amdc\.m\.taobao\.com|47\.246\.103\.(?:9|10)|59\.82\.113\.(?:10|219))\/amdc\/mobileDispatch(?:\?|$),DIRECT
+
 [Script]
 
 http-request ^https:\/\/(?:acs|trade-acs|h5api)\.m\.taobao\.com\/ script-path=https://raw.githubusercontent.com/johnnyjyz/Loon-rules/main/taobao_app_overseas.js,tag=Taobao region-cookie test,timeout=20,argument=[{normalize_region},{patch_detail},{notify},{debug}],enable={normalize_region}
